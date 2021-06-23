@@ -1,5 +1,6 @@
-
-from django.http import HttpResponse
+from django.shortcuts import render
+from .forms import TickerForm
 
 def index(request):
-    return HttpResponse("Hello Nerds! You're at the stocks page!")
+    form = TickerForm()
+    return render(request, 'stocks/index.html', {'form':form})
