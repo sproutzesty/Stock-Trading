@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import TickerForm
+from .tiingo import get_meta_data
 
 def index(request):
     if request.method == 'POST':
@@ -15,4 +16,5 @@ def index(request):
 def ticker(request, tid):
     context = {}
     context['ticker'] = tid
+    context['meta'] = get_meta_data(tid)
     return render(request, "stocks/ticker.html", context)
