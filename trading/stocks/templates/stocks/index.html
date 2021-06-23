@@ -1,21 +1,16 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>
+{% extends "stocks/base.html" %}
+
       {% block title %}
       Search Page
       {% endblock %}
-    </title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-  </head>
-  <body>
+    
     {% block content %}
-      <form action="/stocks/" method="post">
+    <div class="container text-center">
+      <h1>Enter a stock symbol</h1>
+      <form action="/stocks/" method="POST">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Submit">
       </form>
+    </div>
     {% endblock %}
-  </body>
-</html>
