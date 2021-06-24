@@ -7,10 +7,11 @@
     {% block content %}
     <div class="container text-center">
       <h1>Enter a stock symbol</h1>
+
       <form action="/stocks/" method="POST">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Submit">
+        <input type="Submit" value="Submit">
       </form>
     </div>
     {% endblock %}
