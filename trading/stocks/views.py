@@ -8,7 +8,7 @@ def index(request):
         form = TickerForm(request.POST)
         if form.is_valid():
             ticker = request.POST['ticker']
-            return HttpResponseRedirect(ticker)
+            return HttpResponseRedirect(ticker) 
     else:
         form = TickerForm()
     return render(request, "stocks/index.html", {"form":form})
